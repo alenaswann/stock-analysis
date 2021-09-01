@@ -5,7 +5,9 @@
 ### This analysis was designed to assist Steve with easily summarizing and comparing stock trends for twelve companies from 2017 and 2018. By looking at the total trading volume of a company's stocks and their yearly return percentage, Steve can help his parents make an informed decision on which of these companies will likely be a profitable investment.
 
 ##Results
-###_2017 and 2018 Stock Comparison_
+
+###2017 and 2018 Stock Comparison
+
  
 In comparing 2017 and 2018 total daily volumes of stock trading and return percentages, there does not appear to be an indication that increased trading equals a higher return percentage for a company's investors. Only two companies, _RUN_ and _TERP_, had increases in trading volume AND return percentage from 2017 to 2018, even though seven of the twelve companies experienced increased trading in that time. A lack of trading does not appear to benefit the percentage either, as the other five companies that had a decrease in trading from 2017 to 2018 all had a decrease in return percentage as well.
 
@@ -14,7 +16,7 @@ Given the success of the 2017 market, it is easy to see why Steve's parents woul
 ![All Stock Results 2017](Resources/All_Stocks_2017.PNG)
 ![All Stock Results 2018](Resources/All_Stocks_2018.PNG) 
 
-###_Original VBA Code For Analysis_
+###Original VBA Code For Analysis
 
 To achieve this quick analysis of Steve's data, I build the VBA macro below to pull and compile this data into the tables shown above.
  
@@ -159,7 +161,7 @@ This whole process was timed with a `Timer`, taking roughly 0.88 seconds for the
 
  Although very fast compared to manual compilation, it could take a relatively long time if we were dealing with hundreds or thousands of stocks. By refactoring the code to run through all of the data once, Steve will be able to get his results much faster. 
 
-###_Refactoring the VBA Code_
+###Refactoring the VBA Code
 
 By making small changes to the previous code and utilizing multiple arrays, I was able to have the macro run through the rows only once, pulling data for all of the tickers and compiling results for each of them as it went. 
 
@@ -238,7 +240,7 @@ Although a little more complicated, this refactored code runs much faster as it 
 
 ##Summary
 
-###_To Refactor Or Not To Refactor_
+###To Refactor Or Not To Refactor
 Refactoring code had its advantages and disadvantages. Refactored code is ultimately easier to read and maintain, as it tends to reduce the amount of repetition. If a change needs to be made at a later date, the code should be more concise and the editor should have a lower likelihood of missing something. It can also help a macro run faster and allow the user to get output sooner, especially if repetition is reduced. However, a disadvantage is knowing HOW to improve upon a system that is already working. Refactoring is a time consuming process that requires one to already know what they want to improve in the code and then figuring out how to make that change.   
 
 These pros and cons apply to this specific VBA code directly. There is a clear time reduction for both the 2017 and 2018 analyses in the refactored code compared to the original analysis. The program did not have to work as hard since it only needed to go through the rows of data a single time instead of twelve times. However, this refactored code was very difficult for me to figure out and understand, taking me a significant amount of time to build for ultimately a 0.74 reduction in processing time on a code that was already functional.
